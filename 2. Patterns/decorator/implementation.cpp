@@ -24,7 +24,7 @@ class Coffee
 public:
     virtual string getDescription() const = 0; // const: This function will not modify any data inside the object. used only for class functions.
     virtual double cost() const = 0;
-    virtual ~Coffee() {}
+    virtual ~Coffee() {};
 };
 
 // concrete component

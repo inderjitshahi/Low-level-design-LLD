@@ -77,7 +77,7 @@ public:
 
     void setStrategy(PaymentStrategy *s)
     {
-        strategy.reset(s);
+        strategy.reset(s); // safely reset a unique pointer to new  value
     }
     void make_payment(int amount)
     {

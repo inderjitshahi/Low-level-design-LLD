@@ -4,13 +4,14 @@
 #include <fstream> // For file output
 #include <chrono>  // For high-resolution time
 #include <ctime>   // For converting time to string
-#include <iomanip> // For formatting the time output
+#include <iomanip> // For formatting the time output put_time
 
 using namespace std;
 
 // This Logger is a centralized communication center for your application.
 // Enum Class, also known as a Scoped Enumeration, introduced in C++11.
 // Enums are used when a variable needs to be one of a fixed set of possible values.
+// Traditional enum is leaky, unsafe, and implicitly converts to integers. Modern enum class is strongly typed, safely scoped, and prevents a lot of hidden bugs. enum Color { RED, GREEN, BLUE };
 enum class LogLevel
 {
     DEBUG = 0,
@@ -89,7 +90,7 @@ private:
     }
 
 public:
-    static Logger &getInstance()
+    static Logger &getInstance() // return by reference only, otherwise copy constructor is called that will cause error
     {
         static Logger instance;
         return instance;

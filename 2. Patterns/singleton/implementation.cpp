@@ -25,7 +25,7 @@ private:
     SingleTon &operator=(const Singleton &) = delete; // no Copy Assignment Operator, u can return Singleton also instead Singleton&, Singleton& just prevent extra copy creation. Also u can skip return also, in that case, chaining like a=b=c; will not work
 
 public:
-    static SingleTon &getInstance()
+    static SingleTon &getInstance() // & is very important here, otherwise copy constructor will be called
     {
         // Before C++11, this code was not thread-safe. If two threads called getInstance() at the exact same time, they could both try to initialize the instance variable, leading to a race condition.
         static Singleton instance; // runs only for first time getInstance got called, skips for all other times

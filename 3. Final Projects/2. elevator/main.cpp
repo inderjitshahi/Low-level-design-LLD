@@ -67,9 +67,9 @@ private:
     {
         upStops.erase(currentFloor);
         downStops.erase(currentFloor);
-        state = ElevatorState::DOOR_OPEN;
-        // simulate door open
         state = ElevatorState::STOPPED;
+        // simulate door open
+        state = ElevatorState::DOOR_OPEN;
     }
 
 public:
@@ -91,6 +91,13 @@ public:
     int getId() const
     {
         return id;
+    }
+
+    void openDoor()
+    {
+        cout << "Opening elevator " << id << " door at " << currentFloor << "\n";
+        state = ElevatorState::STOPPED;
+        state = ElevatorState::DOOR_OPEN;
     }
 
     void addRequest(int floor)
@@ -128,13 +135,6 @@ public:
                 stopAtFloor();
         }
         updateDirection();
-    }
-
-    void openDoor()
-    {
-        cout << "Opening elevator " << id << " door at " << currentFloor << "\n";
-        state = ElevatorState::DOOR_OPEN;
-        state = ElevatorState::STOPPED;
     }
 
     void updateDirection()

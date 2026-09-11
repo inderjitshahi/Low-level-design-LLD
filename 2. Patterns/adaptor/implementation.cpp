@@ -2,7 +2,7 @@
 using namespace std;
 
 /*
-Adaptor Pattern
+Adaptor Pattern (structural pattern because creates new structure: Client ---> Adapter ---> XmlLogger)
 Intent: Convert the interface of a class into another interface that the client expects.
 so no modification in existing class/interface, preserving ocp principle
 
@@ -28,7 +28,7 @@ public:
 };
 
 // Adaptor
-class XmlToJsonLoggerAdaptor : public JsonLogger
+class XmlToJsonLoggerAdaptor : public JsonLogger  //using JsonLogger as interface
 {
     // the goal is to make two incompatible things talk to each other by "wrapping" the old one in a way that fits the new system.
     // So, JsonLogger inherited and XmlLogger composed
@@ -50,7 +50,7 @@ int main()
 {
 
     XmlLogger xmlLogger;
-    JsonLogger *logger = new XmlToJsonLoggerAdaptor(&xmlLogger);
+    JsonLogger *logger = new XmlToJsonLoggerAdaptor(&xmlLogger);  
     logger->logJson("Adapter Pattern Applied");
 
     delete logger;

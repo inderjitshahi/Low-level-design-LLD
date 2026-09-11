@@ -171,7 +171,7 @@ public:
     Ticket(string id, shared_ptr<Vehicle> v, ParkingSpot *s)
         : ticketId(id), vehicle(v), spot(s)
     {
-        entryTime = time(nullptr);
+        entryTime = time(nullptr); // from ctime, returns current time in seconds since epoch
     }
 
     void closeTicket()
@@ -302,7 +302,7 @@ public:
         }
 
         // Extract ownership
-        unique_ptr<Ticket> ticket = move(it->second);
+        unique_ptr<Ticket> ticket = move(it->second); // because unique_ptr can't be copied, we move it to local variable, now ticket owns the Ticket object
         activeTickets.erase(it);
 
         // Close ticket

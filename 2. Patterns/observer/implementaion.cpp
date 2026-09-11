@@ -2,7 +2,7 @@
 using namespace std;
 
 /*
-Observer Pattern (Behavior): defines a one-to-many dependency between objects(subject to observers).
+Observer Pattern (Behavioural): defines a one-to-many dependency between objects(subject to observers).
 
 Components:
 - Subject: maintains state and notifies observers.
@@ -25,8 +25,8 @@ class Subject
 public:
     virtual ~Subject() {};
     virtual void notify() = 0;
-    virtual void attach(Observer *obs) = 0;
-    virtual void detach(Observer *obs) = 0;
+    virtual void attach(Observer *) = 0;
+    virtual void detach(Observer *) = 0;
 };
 
 class ConcreteSubject : public Subject

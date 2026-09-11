@@ -14,3 +14,11 @@
 [2026-39-25 :39:27] [INFO]: Application started
 [2026-39-25 :39:27] [WARN]: Low memory warning
 [2026-39-25 :39:27] [ERROR]: Unhandled exception occurred
+[2026-06-01 21:14:41] [DEBUG]: Debugging application
+[2026-06-01 21:14:41] [INFO]: Application started
+[2026-06-01 21:14:41] [WARN]: Low memory warning
+[2026-06-01 21:14:41] [ERROR]: Unhandled exception occurred
+[2026-06-01 21:22:35] [DEBUG]: Debugging application
+[2026-06-01 21:22:35] [INFO]: Application started
+[2026-06-01 21:22:35] [WARN]: Low memory warning
+[2026-06-01 21:22:35] [ERROR]: Unhandled exception occurred
